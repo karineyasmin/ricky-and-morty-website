@@ -1,0 +1,12 @@
+{% extends "layout.html"%}
+
+{% for location in locations %}
+{% block title %}
+{{location.name}}
+{% endblock title %}
+
+{% block content %}
+{{location.name}}
+
+{% endfor %}
+{% enblock content %}
