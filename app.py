@@ -64,26 +64,26 @@ def get_locations():
     return render_template("locations.html", locations=locations)
 
 
-# @app.route("/locations/<id>")
-# def get_locations_id(id):
-#     url = "https://rickandmortyapi.com/api/location/" + id
-#     response = urllib.request.urlopen(url)
-#     location = response.read()
-#     dict = json.loads(location)
+@app.route("/location/<id>")
+def get_locations_id(id):
+    url = "https://rickandmortyapi.com/api/location/" + id
+    response = urllib.request.urlopen(url)
+    location = response.read()
+    dict = json.loads(location)
 
-#     locations = []
+    locations = []
 
-#     for location in dict["results"]:
-#         location = {
-#             "id": location["id"],
-#             "name": location["name"],
-#             "type": location["type"],
-#             "dimension": location["dimension"],
-#         }
+    for locations in dict["results"]:
+        location = {
+            "id": location["id"],
+            "name": location["name"],
+            "type": location["type"],
+            "dimension": location["dimension"],
+        }
 
-#         locations.append(location)
+        locations.append(location)
 
-#     return render_template("location.html", locations=locations)
+    return render_template("location.html", locations=dict)
 
 
 @app.route("/episodes")

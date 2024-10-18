@@ -1,12 +1,21 @@
 {% extends "layout.html"%}
 
-{% for location in locations %}
+
 {% block title %}
-{{location.name}}
+location
 {% endblock title %}
 
 {% block content %}
-{{location.name}}
+<div class"container-fluid mt-5">
+    <h1>{{locations.name}}</h1>
+    <p>{{locations.type}}</p>
+    <p>Dimension: {{locations.dimension}}</p>
+    {% for location in locations %}
 
-{% endfor %}
-{% enblock content %}
+    {{location.results}}
+
+
+    {% endfor %}
+</div>
+
+{% endblock content %}
